@@ -55,7 +55,7 @@ class TheServer:
 
         self.input_list.append(self.server)
 
-        while 1:
+        while True:
 
             time.sleep(delay)
 
@@ -112,23 +112,15 @@ class TheServer:
 
         print(self.s.getpeername(), "has disconnected")
 
-        # remove objects from input_list
-
         self.input_list.remove(self.s)
 
         self.input_list.remove(self.channel[self.s])
 
         out = self.channel[self.s]
 
-        # close the connection with client
-
-        self.channel[out].close()  # equivalent to do self.s.close()
-
-        # close the connection with remote server
+        self.channel[out].close()
 
         self.channel[self.s].close()
-
-        # delete both objects from channel dict
 
         del self.channel[out]
 
@@ -137,8 +129,6 @@ class TheServer:
     def on_recv(self):
 
         data = self.data
-
-        # here we can parse and/or modify the data before send forward
 
         print(data)
 
@@ -155,6 +145,6 @@ if __name__ == '__main__':
 
     except KeyboardInterrupt:
 
-        print("Ctrl C - Stopping server")
+        print("Нажмите Ctrl + C для остановки сервера")
 
         sys.exit(1)
