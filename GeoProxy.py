@@ -12,7 +12,7 @@ buffer_size = 4096
 
 delay = 0.0001
 
-forward_to = ('htmlbook.ru', 80)
+forward_to = ('193.193.165.165', 20987)
 
 
 class Forward:
@@ -147,7 +147,7 @@ class TheServer:
 
 if __name__ == '__main__':
 
-    server = TheServer('', 9090)
+    server = TheServer('192.168.61.98', 35245)
 
     try:
 
