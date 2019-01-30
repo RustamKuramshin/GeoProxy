@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 
 import socket
-
 import select
-
 import time
-
 import sys
 
 buffer_size = 4096
 delay = 0.0001
-forward_to = ('193.193.165.165', 20987)
+forward_to = ('193.193.165.165', 20163)
 
 
 class Forward:
@@ -94,7 +91,8 @@ class TheServer:
 
 if __name__ == '__main__':
 
-    server = TheServer('192.168.61.98', 35245)
+    # server = TheServer('192.168.61.98', 35245)
+    server = TheServer('192.168.61.98', 9205)
     try:
         server.main_loop()
     except KeyboardInterrupt:
